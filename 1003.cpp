@@ -5,7 +5,7 @@ unsigned long long hash_values[int(1e6)];
 char queue[int(1e6)];
 
 void insertion_sort(unsigned long long* array, int N)
-{
+{ 
     unsigned long long temp;
     int j;
 
