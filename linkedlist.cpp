@@ -25,7 +25,23 @@ void InsertBefore(Node * curr, int data)
     
 }
 
+int Size(Node * head)
+{
+    Node * curr;
 
+    curr = head;
+
+    int size = 1;
+
+	while (curr != tail)
+    {
+        size++;
+
+        curr = curr->next;
+    }
+    
+    return size;   
+}
 
 void Reverse(Node * &head, Node * &tail) {
 		
@@ -94,6 +110,10 @@ int main()
 		ptr = ptr->next;
 		
 	}
+
+	std::cout<<Size(head)<<std::endl;
+
+	return 0;
 
 }
 // int main()
