@@ -1,5 +1,6 @@
 #include <iostream>
 
+
 int num = 0;
 int m, n;
 
@@ -203,6 +204,5 @@ int main()
     {
         std::cout<<"No solution."<<std::endl;
     }
-
     return 0;
 }

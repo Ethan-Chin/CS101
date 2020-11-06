@@ -57,9 +57,9 @@ void build_raw_tree()
     tree[r]->check(new Index_node(l, len));
 }
 
-int main()
-{
-    build_raw_tree();
-
-    return 0;
-}
+//int main()
+//{
+//build_raw_tree();
+//
+//return 0;
+//}
