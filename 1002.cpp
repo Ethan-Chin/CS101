@@ -42,34 +42,34 @@ int pre_qsort(int* array, int first, int last)
     return array[last - 2];
 }
 
-void quick_sort(int* array, int first, int last)
+void quick_sort(Edge *eds, int first, int last)
 {
     if (last - first > 10)
     {
         int i = first, j = last - 2;
-        int pivot = pre_qsort(array, first, last);
+        int pivot = pre_qsort(eds, first, last);
 
         while (1)
         {
-            while (array[++i] < pivot);
-            while (array[--j] > pivot);
+            while (eds[++i] < pivot);
+            while (eds[--j] > pivot);
             if (i < j)
             {
-                std::swap(array[i], array[j]);
+                std::swap(eds[i], eds[j]);
             }
             else
             {
                 break;
             }
         }
-        std::swap(array[i], array[last - 2]);
+        std::swap(eds[i], eds[last - 2]);
 
-        quick_sort(array, first, i);
-        quick_sort(array, i + 1, last);
+        quick_sort(eds, first, i);
+        quick_sort(eds, i + 1, last);
     }
     else
     {
-        insertion_sort(array + first, last - first);
+        insertion_sort(eds + first, last - first);
     }
 
 }
