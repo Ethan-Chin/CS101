@@ -5,6 +5,7 @@ set(CMAKE_CXX_STANDARD 14)
 
 include_directories(.)
 
-add_executable(Code
-        y2003.cpp
+add_executable(4003
+        4003.cpp
+        #sample.cpp
         )

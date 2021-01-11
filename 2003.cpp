@@ -14,7 +14,6 @@ struct Edge
 
     bool operator <(const Edge& e) const { return desire[l] < desire[e.l]; }
     bool operator >(const Edge& e) const { return desire[l] > desire[e.l]; }
-    bool operator ==(const Edge& e) const { return desire[l] == desire[e.l]; }
 
     explicit Edge()=default;
     explicit Edge(int in_l, int in_r){ if (desire[in_l] < desire[in_r]) l = in_l, r = in_r; else r = in_l, l = in_r; }
@@ -88,7 +87,7 @@ int main()
 
     for (int i = 1; i <= n; ++i) std::cin>>desire[i], sets[i] = i;
 
-    int l, r;
+    int l, r, root;
 
     for (int i = 0; i < m; ++i) std::cin>>l>>r, edges[i] = Edge(l, r);
 
@@ -102,9 +101,8 @@ int main()
 
     for (int i = 1; i <= n ; ++i)
     {
-        int root = find(sets[i]);
-        if (!if_add[root]) times += desire[find(sets[i])], if_add[root] = true;
-
+        root = find(sets[i]);
+        if (!if_add[root]) times += desire[root], if_add[root] = true;
     }
 
     std::cout<<times<<std::endl;
